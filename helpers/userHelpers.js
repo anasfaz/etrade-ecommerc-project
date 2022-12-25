@@ -4,8 +4,8 @@ const bcrypt = require('bcrypt')
 const { response } = require('express')
 var objectId = require('mongodb').ObjectId
 // const otp = require('../config/OTP')
-require('dotenv').config();
-const Client = require('twilio')(process.env.accountSID, process.env.authToken)
+// require('dotenv').config();
+// const Client = require('twilio')(process.env.accountSID, process.env.authToken)
 
 var Razorpay = require('razorpay')
 // const { resolve } = require('path')
@@ -504,56 +504,56 @@ module.exports = {
     },
     /// do Otp 
 
-    doOTP: (data) => {
-        return new Promise(async (resolve, reject) => {
-            console.log(data, '**************data**************');
-            let response = {}
-            let user = await db.get().collection(collection.USER_COLLECTION)
-                .findOne({ PhoneNumber: data.Phone })
-            console.log(user, '********user*****');
-            if (user) {
-                response.status = true
-                response.user = user
-                Client.verify.services(process.env.serviceSID)
-                    .verifications
-                    .create({ to: `+91${data.Phone}`, channel: 'sms' })
-                    .then((verifications) => {
+    // doOTP: (data) => {
+    //     return new Promise(async (resolve, reject) => {
+    //         console.log(data, '**************data**************');
+    //         let response = {}
+    //         let user = await db.get().collection(collection.USER_COLLECTION)
+    //             .findOne({ PhoneNumber: data.Phone })
+    //         console.log(user, '********user*****');
+    //         if (user) {
+    //             response.status = true
+    //             response.user = user
+    //             Client.verify.services(process.env.serviceSID)
+    //                 .verifications
+    //                 .create({ to: `+91${data.Phone}`, channel: 'sms' })
+    //                 .then((verifications) => {
 
-                    });
-                resolve(response)
+    //                 });
+    //             resolve(response)
 
-            } else {
-                response.status = false;
-                resolve(response)
-            }
+    //         } else {
+    //             response.status = false;
+    //             resolve(response)
+    //         }
 
-        })
+    //     })
 
 
-    },
-    // post otp confirm
-    doOTPconfirm: (otpData, userData) => {
-        console.log(otpData, '$$$$$$$$$$otpdata');
-        console.log(userData, '%%%%%%%%%userData');
-        return new Promise((resolve, reject) => {
-            console.log('deyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy');
-            Client.verify.services(process.env.serviceSID)
-                .verificationChecks
-                .create({
-                    to: `+91${userData.PhoneNumber}`,
-                    code: otpData.Sixdigit
-                }).then((data) => {
-                    console.log(data, '********data otp*******');
-                    if (data.status == 'approved') {
-                        resolve({ status: true })
+    // },
+    // // post otp confirm
+    // doOTPconfirm: (otpData, userData) => {
+    //     console.log(otpData, '$$$$$$$$$$otpdata');
+    //     console.log(userData, '%%%%%%%%%userData');
+    //     return new Promise((resolve, reject) => {
+    //         console.log('deyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy');
+    //         Client.verify.services(process.env.serviceSID)
+    //             .verificationChecks
+    //             .create({
+    //                 to: `+91${userData.PhoneNumber}`,
+    //                 code: otpData.Sixdigit
+    //             }).then((data) => {
+    //                 console.log(data, '********data otp*******');
+    //                 if (data.status == 'approved') {
+    //                     resolve({ status: true })
 
-                    } else {
-                        resolve({ status: false })
+    //                 } else {
+    //                     resolve({ status: false })
 
-                    }
-                })
-        })
-    },
+    //                 }
+    //             })
+    //     })
+    // },
 
     CancelProduct: (data) => {
         console.log(data, 'ggggggggggg');

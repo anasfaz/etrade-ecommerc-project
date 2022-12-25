@@ -396,51 +396,51 @@ const verifyPaymentRazorpay = (req, res) => {
     })
 }
 
-const getOtpPage = (req, res) => {
+// const getOtpPage = (req, res) => {
     
-    res.render('user/otp-page')
-}
-let otpSignData
-const postOtp = (req, res) => {
+//     res.render('user/otp-page')
+// }
+// let otpSignData
+// const postOtp = (req, res) => {
 
-    console.log(req.body, '*********************phone number ')
-    userHelper.doOTP(req.body).then((response) => {
-        console.log(response, '*********otp response************');
-        if (response.status) {
-            otpSignData = response.user
-            res.redirect('/confirm-otp')
+//     console.log(req.body, '*********************phone number ')
+//     userHelper.doOTP(req.body).then((response) => {
+//         console.log(response, '*********otp response************');
+//         if (response.status) {
+//             otpSignData = response.user
+//             res.redirect('/confirm-otp')
 
-        } else {
-            res.redirect('/otp')
-        }
+//         } else {
+//             res.redirect('/otp')
+//         }
 
-    })
+//     })
 
 
-}
+// }
 /// get confirm OTP 
-const getConfirmOtp = (req, res) => {
-    console.log('confirm****************');
-    res.render('user/confirm-otp')
-}
+// const getConfirmOtp = (req, res) => {
+//     console.log('confirm****************');
+//     res.render('user/confirm-otp')
+// }
 // post confirm otp 
-const postConfirmOtp = (req, res) => {
-    console.log(req.body, '*********6digit*********');
-    console.log(otpSignData, '**********otpsingup data');
-    userHelper.doOTPconfirm(req.body, otpSignData).then((response) => {
-        if (response.status) {
-            console.log(response, "response**************");
-            req.session.loggedIn = true;
-            req.session.user = otpSignData
+// const postConfirmOtp = (req, res) => {
+//     console.log(req.body, '*********6digit*********');
+//     console.log(otpSignData, '**********otpsingup data');
+//     userHelper.doOTPconfirm(req.body, otpSignData).then((response) => {
+//         if (response.status) {
+//             console.log(response, "response**************");
+//             req.session.loggedIn = true;
+//             req.session.user = otpSignData
 
-            res.redirect('/')
-        } else {
-            res.redirect('/confirm-otp')
-        }
-    })
+//             res.redirect('/')
+//         } else {
+//             res.redirect('/confirm-otp')
+//         }
+//     })
 
 
-}
+// }
 
 // post products cancel
 const postProductCancel = (req, res) => {

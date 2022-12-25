@@ -73,18 +73,18 @@ router.post('/verify-payment',verifyPaymentRazorpay)
 
 /// get Otp pages
 
-router.get('/Otp-page',getOtpPage);
+// router.get('/Otp-page',getOtpPage);
 
-// post OTP pages
+// // post OTP pages
 
-router.post('/otp',postOtp);
+// router.post('/otp',postOtp);
 
-// get otp confirm 
+// // get otp confirm 
 
-router.get('/confirm-otp',getConfirmOtp)
+// router.get('/confirm-otp',getConfirmOtp)
 
-// post otp confir
-router.post('/otp-confirmDigit',postConfirmOtp)
+// // post otp confir
+// router.post('/otp-confirmDigit',postConfirmOtp)
 
 // product cancel 
 
