@@ -602,7 +602,9 @@ const postRemoveWishlist=(req,res)=>{
 module.exports = {
     userHome, getLogin, getSignUp, postSignUp, postLogin, getLogout, getCart, getProductDetailes,
     getAddCart, postProductQuantity, getPlaceOrder, postPlaceOrderdetiles, getOrderSuccess, getMyAccount,
-    getMyOrders, getViewOrdeProducts, verifyPaymentRazorpay, getOtpPage, postOtp, getConfirmOtp, postConfirmOtp, postProductCancel,
+    getMyOrders, getViewOrdeProducts, verifyPaymentRazorpay,
+     postProductCancel,
     getUserDetails, postUserEdit, removeProductCart, postAddAddress, getAllProductsPage, getWishlist, postCoupon,paymentFailed,getAddToWishlist,
-    postRemoveWishlist
+    postRemoveWishlist,
+    // getOtpPage, postOtp, getConfirmOtp, postConfirmOtp, 
 }
