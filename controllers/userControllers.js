@@ -341,7 +341,7 @@ const postPlaceOrderdetiles = async (req, res) => {
 const getOrderSuccess = (req, res) => {
     console.log('order successs    ')
 
-    res.render('user/order-Success',{layout:null})
+    res.render('user/order-success')
 }
 const getMyAccount = async(req, res) => {
     let user=req.session.user
