@@ -98,7 +98,7 @@ const postLogin = (req, res) => {
 }
 //get signUp
 const getSignUp = (req, res) => {
-    res.render('user/sign-Up')
+    res.render('user/sign-Up',{User:true})
 }
 //post signUP
 const postSignUp = (req, res) => {
