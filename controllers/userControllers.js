@@ -243,7 +243,7 @@ const postPlaceOrderdetiles = async (req, res) => {
                     },
                     "redirect_urls": {
                         "return_url": "http://localhost:3000/order-success",
-                        "cancel_url": "http://localhost:3000/file"
+                        "cancel_url": "https://etrade.gq/pyment-failed/"+orderId
                     },
                     "transactions": [{
                         "amount": {
@@ -303,7 +303,7 @@ const postPlaceOrderdetiles = async (req, res) => {
                     },
                     "redirect_urls": {
                         "return_url": "http://localhost:3000/order-success",
-                        "cancel_url": "http://localhost:3000/pyment-failed/"+orderId
+                        "cancel_url": "https://etrade.gq/pyment-failed/"+orderId
                     },
                     "transactions": [{
                         "amount": {

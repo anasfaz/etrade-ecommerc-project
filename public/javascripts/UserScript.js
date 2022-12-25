@@ -40,7 +40,7 @@ function razorpayPayment(order) {
       "modal": {
         "ondismiss": function(){
           
-          window.location.replace('http://localhost:3000/pyment-failed/'+order.receipt);
+          window.location.replace('https://etrade.gq/pyment-failed/'+order.receipt);
         }
     },
       "prefill": {
