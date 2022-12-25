@@ -98,7 +98,7 @@ const postLogin = (req, res) => {
 }
 //get signUp
 const getSignUp = (req, res) => {
-    res.render('user/sign-Up',{User:true})
+    res.render('user/sign-Up',{layout:null})
 }
 //post signUP
 const postSignUp = (req, res) => {
@@ -341,7 +341,7 @@ const postPlaceOrderdetiles = async (req, res) => {
 const getOrderSuccess = (req, res) => {
     console.log('order successs    ')
 
-    res.render('user/order-Success')
+    res.render('user/order-Success',{layout:null})
 }
 const getMyAccount = async(req, res) => {
     let user=req.session.user
