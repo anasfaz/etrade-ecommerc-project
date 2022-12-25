@@ -4,9 +4,11 @@ const {verifyLogin} = require('../middlewares/verify')
 
 const {userHome,getLogin,getSignUp,postSignUp,postLogin,getLogout,getCart,getProductDetailes,getAddCart,postProductQuantity,
     getPlaceOrder,postPlaceOrderdetiles,getOrderSuccess,
-    getMyAccount,getMyOrders,getViewOrdeProducts,verifyPaymentRazorpay,getOtpPage,postOtp,getConfirmOtp,postConfirmOtp,
+    getMyAccount,getMyOrders,getViewOrdeProducts,verifyPaymentRazorpay,
     postProductCancel,getUserDetails,postUserEdit,removeProductCart,postAddAddress,getAllProductsPage,getWishlist,postCoupon,
-    paymentFailed,getAddToWishlist,postRemoveWishlist}=require('../controllers/userControllers');
+    paymentFailed,getAddToWishlist,postRemoveWishlist,
+    // getOtpPage,postOtp,getConfirmOtp,postConfirmOtp,
+}=require('../controllers/userControllers');
 const userHelpers = require('../helpers/userHelpers');
 const { payment } = require('paypal-rest-sdk');
 // const { getAddCategory } = require('../controllers/adminControllers');
